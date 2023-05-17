@@ -11,18 +11,19 @@ import { CustomerService } from 'src/app/services/customer.service';
 
 export class AddCustomersComponent {
   addCustomerForm!:any
-  countryData:any
-  constructor(private customer:CustomerService,private fb:FormBuilder,private router:Router){
-
-  }
-
-
+  countryData: any
+  regionData:any
+  constructor(
+    private customer: CustomerService,
+    private fb: FormBuilder,
+    private router: Router
+  ) { }
+  
   ngOnInit(){
-this._getCountryData()
-this._initForm()
+  this._getCountryData() // get the country data from open api
+  this._initForm() // init the addCustomerForm
   }
 _initForm(){
-
   this.addCustomerForm = new FormGroup({
     title: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required,Validators.email]),
@@ -32,23 +33,33 @@ _initForm(){
   )
 }
 
-_getCountryData(){
-  this.customer._get_country_data().subscribe((res:any)=>{
-    const data = Object.entries(res)    
-    let tempData= data.map((key:any)=>{ 
-      let temp:any={}
-      temp={"country": key[1].country, "region":key[1].region}
-      return temp
+_getCountryData() {
+  this.customer._get_country_data().subscribe(
+    (res: any) => {
+      const rdata = Object.entries(res);
+      const uniqueRegions = new Set();
+      const regionData: any[] = [];
+      //for region data
+      rdata.forEach(([countryCode, {  region }]: any) => {
+        if (!uniqueRegions.has(region)) {
+          uniqueRegions.add(region);
+          regionData.push( region );
+        }
       });
-      this.countryData= tempData.filter((item)=>{
-      
-      })
-  }),(err:any)=>{ 
-console.log(err);
-
-  }
+      this.regionData = regionData;
+      console.log(this.regionData);
+// for countries data
+      const cdata = Object.entries(res)    
+      this.countryData  = cdata.map((key:any)=>{ 
+        return  key[1].country
+});
+    },
+    (err: any) => {
+      console.log(err);
+    }
+  );
 }
-
+// add customer this method takes the inputs and send data to api
 addCustomer(){
 const data =this.addCustomerForm.getRawValue()
 console.log(data);

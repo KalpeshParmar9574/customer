@@ -1,45 +1,34 @@
 <div >
     <div class="container mt-5">
-        <div class="row">
-            <div class="col">
+        <div class="row ">
+            <div class="col d-flex justify-content-end">
               <button class=" w-25 btn btn-secondary btn-block" (click)="_goto_addCutomer()">AddCustomer</button>
             </div>
           </div>
-          <div class="row">
-            <div class="col">
-              <button class=" w-25 btn btn-secondary btn-block" (click)="goto_addPins()">Add Pin\</button>
+          <div class="row mt-2">
+            <div class="col d-flex justify-content-end">
+              <button class=" w-25 btn btn-secondary btn-block" (click)="_goto_addPins()">Add Pin</button>
             </div>
           </div>
-    <div class="row">
-      <table class="table">
+    <div class="row mt-2">
+      <table class="table"  id="pinDataTable">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Title</th>
+      <th scope="col">Image</th>
+      <th scope="col">Colobrators</th>
+      <th scope="col">Privacy</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <tr *ngFor="let pin of pinsData">
+      <td>{{pin.title}}</td>
+      <td><img src="../../../assets/banana.jpg" class="pinImg" alt="{{pin.image.options.url}}"></td>
+      <td>{{pin.colobrators }}</td>
+      <td>{{pin.privacy}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    
   </tbody>
 </table>
-    </div></div>
+  
 </div>

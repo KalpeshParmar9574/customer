@@ -15,6 +15,85 @@
       "id": 2
     }
   ],
+  "pins": [
+    {
+      "title": "test1",
+      "image": {
+        "isUploading": false,
+        "queue": [],
+        "progress": 0,
+        "_nextIndex": 0,
+        "options": {
+          "autoUpload": false,
+          "isHTML5": true,
+          "filters": [
+            {
+              "name": "queueLimit"
+            }
+          ],
+          "removeAfterUpload": false,
+          "disableMultipart": false,
+          "formatDataFunctionIsAsync": false,
+          "url": "http://localhost:3000/dashborad.jpg"
+        },
+        "authTokenHeader": "Authorization",
+        "autoUpload": false,
+        "response": {
+          "closed": false,
+          "currentObservers": null,
+          "observers": [],
+          "isStopped": false,
+          "hasError": false,
+          "thrownError": null,
+          "__isAsync": false
+        }
+      },
+      "colobrators": [
+        "kp"
+      ],
+      "privacy": "public",
+      "id": 1
+    },
+    {
+      "title": "tgt",
+      "image": {
+        "isUploading": false,
+        "queue": [],
+        "progress": 0,
+        "_nextIndex": 0,
+        "options": {
+          "autoUpload": false,
+          "isHTML5": true,
+          "filters": [
+            {
+              "name": "queueLimit"
+            }
+          ],
+          "removeAfterUpload": false,
+          "disableMultipart": false,
+          "formatDataFunctionIsAsync": false,
+          "url": "http://localhost:3000/dashborad.jpg"
+        },
+        "authTokenHeader": "Authorization",
+        "autoUpload": false,
+        "response": {
+          "closed": false,
+          "currentObservers": null,
+          "observers": [],
+          "isStopped": false,
+          "hasError": false,
+          "thrownError": null,
+          "__isAsync": false
+        }
+      },
+      "colobrators": [
+        "test",
+        "kp"
+      ],
+      "privacy": "public",
+      "id": 2
+    }
+  ],
   "country": {
     "DZ": {
       "country": "Algeria",

@@ -7,14 +7,16 @@ import { environment } from 'src/environments/environment.development';
   providedIn: 'root'
 })
 export class CustomerService {
-
+  baseURL = environment.baseURL
   countryData = environment.countryData
   userAPI= environment.user
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   _get_country_data(){
     try {
-    return this.http.get(this.countryData)
+    return this.http.get(this.baseURL+this.countryData)
     } catch (error) {
       return throwError((error:any)=>error)
     }
@@ -22,7 +24,7 @@ export class CustomerService {
 
   _addCustomer(data:any){
     try {
-      return  this.http.post(this.userAPI,data)
+      return  this.http.post(this.baseURL+this.userAPI,data)
     } catch (error) {
       return throwError((error:any)=>error)
     }
@@ -30,8 +32,7 @@ export class CustomerService {
 
   getCustomer(){
     try {
-      return this.http.get(this.userAPI)
-
+      return this.http.get(this.baseURL+this.userAPI)
     } catch (error) {
       return throwError((error:any)=>error)
     }

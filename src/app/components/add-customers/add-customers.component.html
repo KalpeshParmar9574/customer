@@ -7,30 +7,30 @@
       
                 <label class="col-2" for="">Title</label>
                 <input class="col-10" type="text" id="title" formControlName="title">
-                <span style="color:red" *ngIf="addCustomerForm.get('title')?.touched&& addCustomerForm.get('title')?.invalid ">please enter title</span>
+                <span class="text-danger warning" *ngIf="addCustomerForm.get('title')?.touched&& addCustomerForm.get('title')?.invalid ">please enter title</span>
             </div>
             <div class="row">
                 <label class="col-2" for="">email</label>
                 <input class="col-10" type="email" id="email" formControlName="email">
-                <span style="color:red" *ngIf="addCustomerForm.get('email')?.touched&& addCustomerForm.get('email')?.invalid ">please enter valid email</span>
+                <span class="text-danger warning" *ngIf="addCustomerForm.get('email')?.touched&& addCustomerForm.get('email')?.invalid ">please enter valid email</span>
             </div>
             <div class="row">
                 <label class="col-2" for="">country</label>
                <select class="col-10" name="country" id="country"  formControlName="country"  >
-                <option  *ngFor="let c of countryData" value="{{c.country}}" >{{c.country}}</option>
+                <option  *ngFor="let country of countryData" value="{{country}}" >{{country}}</option>
                </select>
-               <span style="color:red" *ngIf="addCustomerForm.get('country')?.touched&& addCustomerForm.get('country')?.invalid ">please select country</span>
+               <span class="text-danger warning" *ngIf="addCustomerForm.get('country')?.touched&& addCustomerForm.get('country')?.invalid ">please select country</span>
             </div>
             <div class="row">
       
                 <label class="col-2" for="">region</label>
                <select class="col-10"  name="region" id="region" formControlName="region" >
-                <option value="{{c.region}}" *ngFor="let c of countryData">{{c.region}}</option>
+                <option value="{{region}}" *ngFor="let region of regionData">{{region}}</option>
                </select>
-               <span style="color:red" *ngIf="addCustomerForm.get('region')?.touched&& addCustomerForm.get('region')?.invalid ">please select region</span>
+               <span class="text-danger warning" *ngIf="addCustomerForm.get('region')?.touched&& addCustomerForm.get('region')?.invalid ">please select region</span>
             </div>
-            <div class="row">
-                <button [disabled]="addCustomerForm.invalid" class="btn btn-outline-secondary" type="submit"> Add Customer</button>
+            <div class="row d-flex justify-content-center ">
+                <button [disabled]="addCustomerForm.invalid" class="btn rounded-0 btn-outline-secondary  col-5" type="submit"> Add Customer</button>
             </div>
       </div>
        

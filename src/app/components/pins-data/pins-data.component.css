@@ -5,3 +5,11 @@ button{
  display: flex;
  justify-items: end;
 }
+#pinDataTable,tr,td,th{
+    border: 1px solid black;
+    text-align: center;
+}
+.pinImg{
+     width: 25px;
+     height: 20px;
+}

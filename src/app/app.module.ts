@@ -11,6 +11,7 @@ import{HttpClientModule}from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSelectModule } from 'ngx-select-ex';
+import { FileUploadModule } from 'ng2-file-upload';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { NgxSelectModule } from 'ngx-select-ex';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSelectModule
+    NgxSelectModule,
+    FileUploadModule
     
   ],
   providers: [],
