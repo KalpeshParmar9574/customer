@@ -1,0 +1,7 @@
+button{
+     width: 5%;
+}
+.container_btnContainer{
+ display: flex;
+ justify-items: end;
+}
