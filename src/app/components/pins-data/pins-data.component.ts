@@ -29,6 +29,8 @@ _goto_addPins(){
   _getPinsData() {
     this.pins._getPinsData().subscribe((res) => {
       this.pinsData = res
+      console.log(res);
+      
     },(err:any)=>{alert("error in fetching data please chekc network")})
   }
 }

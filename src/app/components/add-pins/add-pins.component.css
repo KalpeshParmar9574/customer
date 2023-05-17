@@ -6,3 +6,10 @@
     font-size: 15px;
     
 }
+.dropzone.dragover {
+    border: 2px dashed blue;
+    background-color: lightblue;
+  }
+  .dropzone{
+    border: 2px dashed black;
+  }
