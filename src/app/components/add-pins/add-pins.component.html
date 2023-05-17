@@ -13,13 +13,10 @@
         <label class="col-2" for="title">Select Image</label>
         <div class="col-10 w-25 " (drop)="handleDrop($event)" (dragover)="allowDrop($event)">
           <div class="dropzone" [class.dragover]="isDragOver" formControlName="image">
-        
             {{ selectedImageName? selectedImageName : 'Drag And Drop Image'  }}
           </div>
-          
          
         </div>
-
         <span class="text-danger warning" *ngIf="pinDataForm.get('image')?.touched && pinDataForm.get('image')?.invalid">
           Please choose an image
         </span>

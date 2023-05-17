@@ -29,8 +29,26 @@ _goto_addPins(){
   _getPinsData() {
     this.pins._getPinsData().subscribe((res) => {
       this.pinsData = res
-      console.log(res);
-      
+    
+      this._getImgData(res)
     },(err:any)=>{alert("error in fetching data please chekc network")})
   }
+
+  _getImgData(res:any) {
+    const temp = localStorage.getItem('imageData');
+    if (temp) {
+      const imgs = JSON.parse(temp);
+      this.pinsData = res.filter((item:any) => {
+        return imgs.some((img:any) => {
+          if (item.id === img.id) {
+            item.img = img;
+            return true;
+          }
+          return false;
+        });
+      });
+      console.log(this.pinsData);
+    }
+  }
+  
 }

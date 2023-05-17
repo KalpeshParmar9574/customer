@@ -25,36 +25,6 @@
   "pins": [
     {
       "title": "test1",
-      "image": {
-        "isUploading": false,
-        "queue": [],
-        "progress": 0,
-        "_nextIndex": 0,
-        "options": {
-          "autoUpload": false,
-          "isHTML5": true,
-          "filters": [
-            {
-              "name": "queueLimit"
-            }
-          ],
-          "removeAfterUpload": false,
-          "disableMultipart": false,
-          "formatDataFunctionIsAsync": false,
-          "url": "http://localhost:3000/dashborad.jpg"
-        },
-        "authTokenHeader": "Authorization",
-        "autoUpload": false,
-        "response": {
-          "closed": false,
-          "currentObservers": null,
-          "observers": [],
-          "isStopped": false,
-          "hasError": false,
-          "thrownError": null,
-          "__isAsync": false
-        }
-      },
       "colobrators": [
         "kp"
       ],
@@ -62,90 +32,23 @@
       "id": 1
     },
     {
-      "title": "tgt",
-      "image": {
-        "isUploading": false,
-        "queue": [],
-        "progress": 0,
-        "_nextIndex": 0,
-        "options": {
-          "autoUpload": false,
-          "isHTML5": true,
-          "filters": [
-            {
-              "name": "queueLimit"
-            }
-          ],
-          "removeAfterUpload": false,
-          "disableMultipart": false,
-          "formatDataFunctionIsAsync": false,
-          "url": "http://localhost:3000/dashborad.jpg"
-        },
-        "authTokenHeader": "Authorization",
-        "autoUpload": false,
-        "response": {
-          "closed": false,
-          "currentObservers": null,
-          "observers": [],
-          "isStopped": false,
-          "hasError": false,
-          "thrownError": null,
-          "__isAsync": false
-        }
-      },
+      "title": "test2",
       "colobrators": [
         "test",
-        "kp"
+        "test2"
       ],
-      "privacy": "public",
+      "privacy": "private",
       "id": 2
     },
     {
-      "title": "test6",
-      "image": {
-        "isUploading": false,
-        "queue": [],
-        "progress": 0,
-        "_nextIndex": 0,
-        "options": {
-          "autoUpload": false,
-          "isHTML5": true,
-          "filters": [
-            {
-              "name": "queueLimit"
-            }
-          ],
-          "removeAfterUpload": false,
-          "disableMultipart": false,
-          "formatDataFunctionIsAsync": false,
-          "url": {}
-        },
-        "authTokenHeader": "Authorization",
-        "autoUpload": false,
-        "response": {
-          "closed": false,
-          "currentObservers": null,
-          "observers": [],
-          "isStopped": false,
-          "hasError": false,
-          "thrownError": null,
-          "__isAsync": false
-        }
-      },
+      "title": "test3",
       "colobrators": [
-        "kp"
-      ],
-      "privacy": "public",
-      "id": 3
-    },
-    {
-      "title": "test",
-      "image": {},
-      "colobrators": [
+        "kp",
+        "test2",
         "test"
       ],
       "privacy": "public",
-      "id": 4
+      "id": 3
     }
   ],
   "country": {
