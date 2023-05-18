@@ -24,7 +24,7 @@
     <tr *ngFor="let pin of pinsData">
       <td>{{pin.title}}</td>
       <td><img src="{{pin.img.img}}" class="pinImg" alt="{{pin.img.img}}"></td>
-      <td>{{pin.colobrators }}</td>
+      <td> {{pin.colobrators }} </td>
       <td>{{pin.privacy}}</td>
     </tr>
     
@@ -32,3 +32,24 @@
 </table>
   
 </div>
+
+
+
+<!-- <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Popup Title</h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->

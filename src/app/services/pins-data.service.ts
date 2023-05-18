@@ -12,7 +12,7 @@ export class PinsDataService {
   constructor(
     private http: HttpClient
   ) { }
-  _addPins(data: any) {
+  _addPins(data: any) { // for addng pins in json-server 
     try {
       return this.http.post<any>(this.baseURL+this.pinsApi,data)
     } catch (error) {
@@ -20,7 +20,7 @@ export class PinsDataService {
     }
   }
 
-  _getPinsData() {
+  _getPinsData() { 
     try {
       return this.http.get<any>(this.baseURL+this.pinsApi)
     } catch (error) {

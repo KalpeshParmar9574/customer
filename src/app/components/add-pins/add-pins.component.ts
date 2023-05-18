@@ -6,7 +6,7 @@ import { PinsDataService } from 'src/app/services/pins-data.service';
 import { Route, Router } from '@angular/router';
 import { FileItem, FileUploader } from 'ng2-file-upload';
 
-const URL = 'http://localhost:3000/pins';
+const URL = '';
 @Component({
   selector: 'app-add-pins',
   templateUrl: './add-pins.component.html',
@@ -15,31 +15,20 @@ const URL = 'http://localhost:3000/pins';
 export class AddPinsComponent {
   userData!: any
   pinDataForm!: FormGroup
-  isDragOver: boolean = false
+  // isDragOver: boolean = false for manual drag and drop
   selectedImageName: string = '';
 
   uploader!: FileUploader;
   hasBaseDropZoneOver!:boolean;
-  hasAnotherDropZoneOver!:boolean;
-  response!: string;
-  storeIMG!: any;
-
   constructor(
     private customer: CustomerService,
     private fb: FormBuilder,
     private pins: PinsDataService,
     private route : Router
   ) {
-    // this.uploader = new FileUploader({
-    //   url: 'http://localhost:3000/pins', //  JSON Server endpoint
-    //   itemAlias: 'image',
-    //   autoUpload: false // Disable auto-upload
-    // });
-
-    
     this.uploader = new FileUploader({
        url: URL,
-      disableMultipart: true, // 'DisableMultipart' must be 'true' for formatDataFunction to be called.
+      disableMultipart: true, 
       formatDataFunctionIsAsync: true,
       formatDataFunction: async (item:any) => {
         return new Promise( (resolve, reject) => {
@@ -72,7 +61,7 @@ _getUserData(){
  
     this.pinDataForm = this.fb.group({
       title: new FormControl('', [Validators.required]),
-      image:new FormControl('', [Validators.required]),
+    
       colobrators: new FormControl('', [Validators.required]),
       privacy : new FormControl('',[Validators.required])
   })
@@ -81,8 +70,10 @@ _getUserData(){
  
   
   _addPins() {
-   debugger
+ 
     const data = this.pinDataForm.getRawValue();
+    console.log(data);
+    
     const body = {
       title: data.title,
       colobrators: data.colobrators,
@@ -93,8 +84,7 @@ _getUserData(){
     this.pins._addPins(body).subscribe((res) => {
       if (res) {
         alert("pin added successfully")
-        console.log(res);
-        this.storeImgData(res,data.image)
+        this.storeImgData(  res,this.uploader.queue[0]._file)
         this.route.navigate(['home'])
       }
     }, (err) => {
@@ -102,7 +92,7 @@ _getUserData(){
       
     })
     
-    // 
+    
    
   }
   storeImgData(res: any, image: File) {
@@ -127,28 +117,13 @@ _getUserData(){
     reader.readAsDataURL(image);
   }
 
-// drag and drop functionlities
-  allowDrop(event: any) {
-    event.preventDefault();
-    this.isDragOver = true;
-  }
 
-  handleDrop(event: any) {
-    event.preventDefault();
-    this.isDragOver = false;
-    const files = event.dataTransfer.files;
-    if (files.length > 0) {
-      this.pinDataForm.patchValue({ image: files[0] });
-      this.selectedImageName = files[0].name; 
-    }
-  }
 
-  handleFileInput(event: any) {
-    const files = event.target.files;
-    if (files.length > 0) {
-      this.pinDataForm.patchValue({ image: files[0] });
-    }
+  public fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
+    console.log();
+    
   }
-
+ 
  
 }

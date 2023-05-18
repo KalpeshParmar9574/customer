@@ -11,20 +11,21 @@
   
       <div class="row">
         <label class="col-2" for="title">Select Image</label>
-        <div class="col-10 w-25 " (drop)="handleDrop($event)" (dragover)="allowDrop($event)">
-          <div class="dropzone" [class.dragover]="isDragOver" formControlName="image">
-            {{ selectedImageName? selectedImageName : 'Drag And Drop Image'  }}
-          </div>
-         
-        </div>
-        <span class="text-danger warning" *ngIf="pinDataForm.get('image')?.touched && pinDataForm.get('image')?.invalid">
-          Please choose an image
-        </span>
+       
+
+        <div ng2FileDrop  
+        [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+        (fileOver)="fileOverBase($event)"
+        [uploader]="uploader"
+        class="well my-drop-zone col-10 text-center">
+       Drag and Drop Image Here
+   </div>
+       
       </div>
   
       <div class="row">
         <label class="col-2" for="title">Select Collaborators</label>
-        <ngx-select class="col-10" [items]="userData" [multiple]="true" formControlName="colobrators"></ngx-select>
+        <ngx-select class="col-10 px-1" [items]="userData" [multiple]="true" formControlName="colobrators"></ngx-select>
         <span class="text-danger warning" *ngIf="pinDataForm.get('colobrators')?.touched && pinDataForm.get('colobrators')?.invalid">
           Please select collaborators
         </span>
@@ -40,7 +41,7 @@
       </div>
   
       <div class="row d-flex justify-content-center mt-5">
-        <button class="btn rounded-0 btn-outline-secondary col-5" type="submit" [disabled]="pinDataForm.invalid">
+        <button class="btn rounded-0 btn-outline-secondary col-5 w-25" type="submit" [disabled]="pinDataForm.invalid">
           Add Pins
         </button>
       </div>

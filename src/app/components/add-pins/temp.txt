@@ -32,3 +32,36 @@
   
     this.uploader.uploadAll();
   }
+
+  drag and drop manually 
+
+   <!-- <div " (drop)="handleDrop($event)" (dragover)="allowDrop($event)">
+          <div class="dropzone" [class.dragover]="isDragOver" formControlName="image">
+            {{ selectedImageName? selectedImageName : 'Drag And Drop Image'  }}
+          </div>
+         
+        </div> -->
+
+        ts code
+        // drag and drop functionlities
+  // allowDrop(event: any) {
+  //   event.preventDefault();
+  //   this.isDragOver = true;
+  // }
+
+  // handleDrop(event: any) {
+  //   event.preventDefault();
+  //   this.isDragOver = false;
+  //   const files = event.dataTransfer.files;
+  //   if (files.length > 0) {
+  //     this.pinDataForm.patchValue({ image: files[0] });
+  //     this.selectedImageName = files[0].name; 
+  //   }
+  // }
+
+  // handleFileInput(event: any) {
+  //   const files = event.target.files;
+  //   if (files.length > 0) {
+  //     this.pinDataForm.patchValue({ image: files[0] });
+  //   }
+  // }

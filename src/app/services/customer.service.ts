@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment.development';
 })
 export class CustomerService {
   baseURL = environment.baseURL
-  countryData = environment.countryData
+  countryData = environment.countryData // country api for gettnig country and region data
   userAPI= environment.user
   constructor(
     private http: HttpClient

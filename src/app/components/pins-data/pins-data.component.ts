@@ -2,18 +2,20 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PinsDataService } from 'src/app/services/pins-data.service';
 
+
 @Component({
   selector: 'app-pins-data',
   templateUrl: './pins-data.component.html',
   styleUrls: ['./pins-data.component.css']
 })
 export class PinsDataComponent {
-
-  pinsData:any
+  pinsData: any
   constructor(
     private router: Router,
-    private pins:PinsDataService
-  ) { }
+    private pins: PinsDataService,
+   
+  ) { 
+  }
 
   ngOnInit() {
     this._getPinsData() // get the pins data
@@ -47,8 +49,20 @@ _goto_addPins(){
           return false;
         });
       });
-      console.log(this.pinsData);
+      
     }
   }
-  
+
 }
+
+//test code to implementing modal
+  // open() {
+  //   this.modalRef = this.modalService.open(this.modal);
+  // }
+  // close() {
+  //   if (this.modalRef) {
+  //     this.modalRef.close();
+  //   }
+  // }
+  // @ViewChild('modal') modal!: any;
+  // modalRef: NgbModalRef | undefined;

@@ -12,13 +12,16 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSelectModule } from 'ngx-select-ex';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 @NgModule({
   declarations: [
     AppComponent,
     AddCustomersComponent,
     AddPinsComponent,
     PinsDataComponent,
-    LayoutsComponent
+    LayoutsComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     FormsModule,
     ReactiveFormsModule,
     NgxSelectModule,
-    FileUploadModule
+    FileUploadModule,
+    ModalModule.forRoot()
     
   ],
   providers: [],
